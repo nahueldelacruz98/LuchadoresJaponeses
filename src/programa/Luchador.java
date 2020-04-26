@@ -64,17 +64,29 @@ public class Luchador {
 
 	// this > otroLuchador
 	public int compareTo(Luchador otroLuchador) {
-		if (this.peso == otroLuchador.peso) {
+		if (this.peso >= otroLuchador.peso && this.altura != otroLuchador.altura) {
 			return this.altura - otroLuchador.altura;
-		} else {
-			if (this.altura == otroLuchador.altura)
-				return this.peso - otroLuchador.peso;
-			else {
-				if (this.peso > otroLuchador.peso)
-					return this.altura - otroLuchador.altura;
-			}
-			return -1; //o this.peso - otroLuchador.peso; 
-		}
+		} else
+			return this.peso - otroLuchador.peso;
 	}
 
+	@Override
+	public String toString() {
+		return "Luchador [id=" + id + ", peso=" + peso + ", altura=" + altura + ", cantVictorias=" + cantVictorias
+				+ "]";
+	}
+	
+	/*	public int compareTo(Luchador otroLuchador) {
+			if (this.peso == otroLuchador.peso) {
+				return this.altura - otroLuchador.altura;
+			} else {
+				if (this.altura == otroLuchador.altura)
+					return this.peso - otroLuchador.peso;
+				else {
+					if (this.peso > otroLuchador.peso)
+						return this.altura - otroLuchador.altura;
+				}
+				return -1; //o this.peso - otroLuchador.peso; 
+			}
+		}*/
 }
